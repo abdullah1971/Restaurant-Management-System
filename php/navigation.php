@@ -60,7 +60,7 @@
 			
 			// if loged in
 
-			//check whether this is admin or voter
+			//check whether this is admin or voter or entry Operator
 			// if voter
 
 			if($identity == "voter"){
@@ -105,6 +105,53 @@
 				}else if ($source == "dashboard"){
 
 					// if dashboard is clicked then
+
+					echo '
+						<ul>
+							<li><a href="index.php">Home</a></li>
+							<li><a href="signOut.php">Sign Out</a></li>
+						</ul>
+
+					';
+
+				}
+				
+
+			}
+
+
+
+
+			// if entry Operator
+			// then check whether $source == 'home' or 'entry_page'
+			// if home then
+
+			if($identity == "entry_operator"){
+
+				// if home then
+				if($source == "home"){
+
+					echo '
+						<ul>
+							<li><a href="entry_page.php">Entry Page</a></li> 
+							<li><a href="signOut.php">Sign Out</a></li>
+						</ul>
+
+					';
+
+				}else if($source == "authonticateSingIn"){
+
+					echo '
+						<ul>
+							<li><a href="../entry_page.php">Entry Page</a></li>
+							<li><a href="../signOut.php">Sign Out</a></li>
+						</ul>
+
+					';
+
+				}else if ($source == "entry_page"){ // have not created this page and need to update when it will be created
+
+					// if entry_page is clicked then
 
 					echo '
 						<ul>

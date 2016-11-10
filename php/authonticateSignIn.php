@@ -55,6 +55,17 @@
 		
 
 
+		// check if entry operator or not
+
+		$result = findValue("entry_operator", "email", $email );
+
+
+		$row = mysqli_fetch_assoc($result);
+
+		$entry_operator_email = $row['email'];
+
+
+
 
 
 		// check if admin or not
@@ -78,6 +89,16 @@
 
 			header("Location: ../index.php");
 		    exit;
+
+		}else if($entry_operator_email === $email){
+
+			// sign in as entry operator
+
+			$_SESSION['identity'] = "entry_operator";
+
+			header("Location: ../index.php");
+		    exit;
+
 
 		}else{
 

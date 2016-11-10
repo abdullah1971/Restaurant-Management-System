@@ -77,7 +77,13 @@
 
 					  <div class="form-group">
 					    <label for="password">Password:</label>
-					    <input type="text" class="form-control" id="password" placeholder="" name="password" required>
+					    <input type="password" class="form-control" id="password" placeholder="" name="password" required>
+					  </div>
+
+
+					  <div class="form-group">
+					    <label for="password">Contact No:</label>
+					    <input type="text" class="form-control" id="contact_no" placeholder="" name="contact_no" required>
 					  </div>
 
 					  <button type="submit" class="btn btn-default add-item-submit-button">Sign Up</button>

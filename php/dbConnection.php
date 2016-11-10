@@ -44,6 +44,45 @@
     }
 
 
+    function insertThreeValue($table_name, $field1, $field2, $field3, $value1, $value2, $value3){
+
+        $query = "INSERT INTO $table_name ($field1, $field2, $field3) VALUES ('$value1', '$value2', '$value3')";
+
+        global $con;
+
+        mysqli_query($con, $query);
+
+        /*if(mysqli_query($con, $query)){
+            echo "insert successful";
+        }
+        else{
+            echo "error";
+        }*/
+
+
+    }
+
+
+
+    function insertFourValue($table_name, $field1, $field2, $field3, $field4, $value1, $value2, $value3, $value4){
+
+        $query = "INSERT INTO $table_name ($field1, $field2, $field3, $field4) VALUES ('$value1', '$value2', '$value3', $value4)";
+
+        global $con;
+
+        mysqli_query($con, $query);
+
+        /*if(mysqli_query($con, $query)){
+            echo "insert successful";
+        }
+        else{
+            echo "error";
+        }*/
+
+
+    }
+
+
     function insertFiveValue($table_name, $field1, $field2, $field3, $field4, $field5, $value1, $value2, $value3, $value4, $value5){
 
     	$query = "INSERT INTO $table_name ($field1, $field2, $field3, $field4, $field5) VALUES ('$value1', '$value2', '$value3', '$value4','$value5')";

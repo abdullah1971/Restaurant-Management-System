@@ -16,6 +16,12 @@
 
 	$password = trim(stripcslashes(htmlspecialchars($_POST['password'])));
 
+	$first_name = trim(stripcslashes(htmlspecialchars($_POST['fname'])));
+
+	$last_name = trim(stripcslashes(htmlspecialchars($_POST['lname'])));
+
+	$contact_no = trim(stripcslashes(htmlspecialchars($_POST['contact_no'])));
+
 	$password = sha1($password);
 
 
@@ -49,7 +55,8 @@
 
 	}
 
-	insertTwoValue("user_info", "email", "password", $email, $password);
+
+	insertFiveValue("user_info", "email", "password","first_name","last_name","contact_no", $email, $password,$first_name, $last_name, $contact_no);
 
 	
 
