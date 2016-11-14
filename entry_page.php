@@ -14,7 +14,7 @@
 
 
 
-	// gather information from the form
+
 
 	
 
@@ -37,12 +37,37 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/forTest.css">
+	<script src="jquery-3.1.1.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 
 	<script type="text/javascript">
+
+
+	// failed :( need to correct to show notification when value is updated
+
+	<?php
+
+		if(isset($_SESSION['addingCustomerNotification'])){
+
+			echo '
+				<script type="text/javascript">
+					alert("Added Successfully");
+				</script>
+			';
+
+			unset($_SESSION['addingCustomerNotification']);
+		}
+
+	?>
+
+
+
+
+
+
 		
-		function showValues(str){
+		/*function showValues(str){
 
 			if(str.length == 0){
 				//document.getElementById("txtHint").innerHTML = this.responseText;
@@ -63,7 +88,7 @@
 				
 			}
 
-		}
+		}*/
 
 	</script>
 
@@ -75,25 +100,8 @@
 	<div class="navigationBar">
 		<h3>Order's Up</h3>
 
-		<!-- ====================
-
-						Navigation Bar
-
-					=====================-->
-				<!--
-
-					use navigationBar("dashboard") function
-					_____________________________-->
-
-
 
 		<?php
-
-			
-			/*if(isset($_SESSION['email']))
-				echo "session has been set";
-			else
-				echo "session has not been set";*/
 
 			navigationBar("entry_page", "entry_operator");
 
@@ -152,10 +160,6 @@
 
 
 
-			
-
-
-			
 
 		</div>
 

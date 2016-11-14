@@ -86,6 +86,7 @@
 
 					echo '
 						<ul>
+							<li><a href="customerStatus.php">Customer Status</a></li>
 							<li><a href="dashboard.php">Dashboard</a></li>
 							<li><a href="signOut.php">Sign Out</a></li>
 						</ul>
@@ -96,6 +97,7 @@
 
 					echo '
 						<ul>
+							<li><a href="../customerStatus.php">Customer Status</a></li>
 							<li><a href="../dashboard.php">Dashboard</a></li>
 							<li><a href="../signOut.php">Sign Out</a></li>
 						</ul>
@@ -109,11 +111,25 @@
 					echo '
 						<ul>
 							<li><a href="index.php">Home</a></li>
+							<li><a href="customerStatus.php">Customer Status</a></li>
 							<li><a href="signOut.php">Sign Out</a></li>
 						</ul>
 
 					';
 
+				}else if($source == "customerStatus"){
+
+
+					// if customer Status is clicked then
+
+					echo '
+						<ul>
+							<li><a href="index.php">Home</a></li>
+							<li><a href="dashboard.php">Dashboard</a></li>
+							<li><a href="signOut.php">Sign Out</a></li>
+						</ul>
+
+					';
 				}
 				
 
@@ -133,6 +149,7 @@
 
 					echo '
 						<ul>
+							<li><a href="customerStatus.php">Customer Status</a></li>
 							<li><a href="entry_page.php">Entry Page</a></li> 
 							<li><a href="signOut.php">Sign Out</a></li>
 						</ul>
@@ -143,6 +160,7 @@
 
 					echo '
 						<ul>
+							<li><a href="../customerStatus.php">Customer Status</a></li>
 							<li><a href="../entry_page.php">Entry Page</a></li>
 							<li><a href="../signOut.php">Sign Out</a></li>
 						</ul>
@@ -156,11 +174,25 @@
 					echo '
 						<ul>
 							<li><a href="index.php">Home</a></li>
+							<li><a href="customerStatus.php">Customer Status</a></li>
 							<li><a href="signOut.php">Sign Out</a></li>
 						</ul>
 
 					';
 
+				}else if($source == "customerStatus"){
+
+
+					// if customer Status is clicked then
+
+					echo '
+						<ul>
+							<li><a href="index.php">Home</a></li>
+							<li><a href="entry_page.php">Entry Page</a></li> 
+							<li><a href="signOut.php">Sign Out</a></li>
+						</ul>
+
+					';
 				}
 				
 

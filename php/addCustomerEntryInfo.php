@@ -47,6 +47,10 @@
 
 	
 
-	//$query = ""
+	$_SESSION['addingCustomerNotification'] = "done";
+	
+
+	header("Location: ../entry_page.php");
+    exit;
 
  ?>

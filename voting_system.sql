@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2016 at 01:44 PM
+-- Generation Time: Nov 14, 2016 at 01:42 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -56,7 +56,8 @@ CREATE TABLE `current_month_entry_history` (
 
 INSERT INTO `current_month_entry_history` (`contact_no`, `email`, `name`, `number_of_entry_on_this_month`) VALUES
 ('01521477476', 'ahnaf@gmail.com', 'Mir Sakib Ahnaf', 1),
-('01737699532', 'shaon@gmail.com', 'Mir Moshraki Shaon', 2);
+('01737699532', 'shaon@gmail.com', 'Mir Moshraki Shaon', 2),
+('01744431381', 'shohag@gmail.com', 'Shohag Sarkar', 5);
 
 -- --------------------------------------------------------
 
@@ -149,6 +150,27 @@ CREATE TABLE `previous_month_entry_history` (
   `number_of_entry_on_this_month` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `previous_month_entry_history`
+--
+
+INSERT INTO `previous_month_entry_history` (`contact_no`, `email`, `name`, `number_of_entry_on_this_month`) VALUES
+('01521477476', 'ahnaf@gmail.com', 'Mir Sakib Ahnaf', 20),
+('01737699532', 'shaon@gmail.com', 'Mir Moshraki Shaon', 15);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temporary_data_from_previous_month`
+--
+
+CREATE TABLE `temporary_data_from_previous_month` (
+  `contact_no` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `number_of_entry_on_this_month` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 -- --------------------------------------------------------
 
 --
@@ -189,6 +211,12 @@ ALTER TABLE `current_month_entry_history`
 -- Indexes for table `previous_month_entry_history`
 --
 ALTER TABLE `previous_month_entry_history`
+  ADD PRIMARY KEY (`contact_no`);
+
+--
+-- Indexes for table `temporary_data_from_previous_month`
+--
+ALTER TABLE `temporary_data_from_previous_month`
   ADD PRIMARY KEY (`contact_no`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
