@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2016 at 01:42 PM
+-- Generation Time: Nov 20, 2016 at 01:03 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -49,15 +49,6 @@ CREATE TABLE `current_month_entry_history` (
   `name` varchar(255) NOT NULL,
   `number_of_entry_on_this_month` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `current_month_entry_history`
---
-
-INSERT INTO `current_month_entry_history` (`contact_no`, `email`, `name`, `number_of_entry_on_this_month`) VALUES
-('01521477476', 'ahnaf@gmail.com', 'Mir Sakib Ahnaf', 1),
-('01737699532', 'shaon@gmail.com', 'Mir Moshraki Shaon', 2),
-('01744431381', 'shohag@gmail.com', 'Shohag Sarkar', 5);
 
 -- --------------------------------------------------------
 
@@ -155,8 +146,8 @@ CREATE TABLE `previous_month_entry_history` (
 --
 
 INSERT INTO `previous_month_entry_history` (`contact_no`, `email`, `name`, `number_of_entry_on_this_month`) VALUES
-('01521477476', 'ahnaf@gmail.com', 'Mir Sakib Ahnaf', 20),
-('01737699532', 'shaon@gmail.com', 'Mir Moshraki Shaon', 15);
+('01521477476', 'ahnaf@gmail.com', 'Mir Sakib Ahnaf', 1),
+('01737699532', 'shaon@gmail.com', 'Mir Moshraki Shaon', 2);
 
 -- --------------------------------------------------------
 
@@ -218,6 +209,24 @@ ALTER TABLE `previous_month_entry_history`
 --
 ALTER TABLE `temporary_data_from_previous_month`
   ADD PRIMARY KEY (`contact_no`);
+
+DELIMITER $$
+--
+-- Events
+--
+CREATE DEFINER=`root`@`localhost` EVENT `copyItems` ON SCHEDULE EVERY 1 MONTH STARTS '2016-11-20 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+-- delete previous month table first
+DELETE FROM previous_month_entry_history;
+
+-- copy from current month table
+INSERT INTO previous_month_entry_history SELECT * FROM current_month_entry_history;
+
+-- delete current month table
+DELETE FROM current_month_entry_history;
+
+END$$
+
+DELIMITER ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
